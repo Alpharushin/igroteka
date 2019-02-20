@@ -22,9 +22,23 @@
 		<div class="admin-nav mb-50">
 			<a href="index.php" class="admin-nav__link">Все игры</a>
     		<a href="new.php" class="admin-nav__link">Добавить новую игру</a>
+        <a href="request.php" class="admin-nav__link">Панель пользователя</a>
 		</div>
+
+    <?php if (isset($_COOKIE['user-name'])) { ?> 
     
+    
+    
+    <div class="mb-50">
+      
+      <?php if (isset($_COOKIE['user-city'])) { ?> 
+      Приветствую , <?=$_COOKIE['user-name']?> из <?=$_COOKIE['user-city']?>!
+      <?php } else { ?>
+      Приветствую , <?=$_COOKIE['user-name']?>!
+     <?php } ?>
+    </div>
   
+  <?php } ?>
   
   
 
