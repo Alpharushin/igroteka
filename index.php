@@ -5,6 +5,7 @@ require('database.php');
 $link = db_connect();
 require('models/games.php');
 
+
 if (@$_GET['action'] == 'delete') {
 	$result = game_delete($link,$_GET['id']);
 

@@ -21,8 +21,39 @@
   
 		<div class="admin-nav mb-50">
 			<a href="index.php" class="admin-nav__link">Все игры</a>
-    		<a href="new.php" class="admin-nav__link">Добавить новую игру</a>
+    		<?php 
+
+          if(isset($_SESSION['user'])) {
+            if($_SESSION['user'] == 'admin') { ?>
+              <a href="new.php" class="admin-nav__link">Добавить новую игру</a>
+        <?php
+            }
+          }
+        
+
+        ?>
+        
+
+        
+        
+
+        
         <a href="request.php" class="admin-nav__link">Панель пользователя</a>
+        <a href="login.php" class="admin-nav__link">Авторизация на сайте</a>
+
+      <?php 
+
+          if(isset($_SESSION['user'])) {
+            if($_SESSION['user'] == 'admin') { ?>
+              <a href="logout.php" class="admin-nav__link">Выход</a>
+        <?php
+            }
+          }
+        
+
+        ?> 
+        
+
 		</div>
 
     <?php if (isset($_COOKIE['user-name'])) { ?> 

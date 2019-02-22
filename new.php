@@ -6,6 +6,7 @@ $link = db_connect();
 
 require('models/games.php');
 
+
 if (array_key_exists('add-game' , $_POST )) {
   
   if ($_POST['title'] == '') {

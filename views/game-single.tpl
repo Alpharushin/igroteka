@@ -10,9 +10,22 @@
 					<div class="col">
 						<div class="card__header">
 				<h4 class="title-4"><?=$game['title']?></h4>
-					<div>
-				<a href="edit.php?id=<?=$game['id']?>" class="button button--edit">Редактировать</a>
-				<a href="index.php?action=delete&id=<?=$game['id']?>" class="button button--delete">Удалить игру</a>
+					<div class="buttons">
+
+					<?php 
+
+          if(isset($_SESSION['user'])) {
+            if($_SESSION['user'] == 'admin') { ?>
+              <a href="edit.php?id=<?=$game['id']?>" class="button button--edit">Редактировать</a>
+							<a href="index.php?action=delete&id=<?=$game['id']?>" class="button button--delete">Удалить игру</a>
+        <?php
+            }
+          }
+        
+
+        ?>
+
+				
 					</div>
 			</div>
         
